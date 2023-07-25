@@ -7,7 +7,7 @@
   },
   "style": {
     "scheme": "css-modules",
-    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.css"
+    "defaultStyleCssFilePath": "plasmic/plasmic__default_style.module.css"
   },
   "images": {
     "scheme": "files",
@@ -24,7 +24,7 @@
     {
       "projectId": "8kqtySnL71cyFF3GhKk7Hd",
       "projectApiToken": "pncebFP6vqNlAdpnXmbvyDRPxPIrJZ1LfEamUbDt66wwuX5toMYKlPZ303eaZgsjGKbgr4CSMKhTZfCE1nA",
-      "projectName": "StarCoach Landing Page",
+      "projectName": "StarCoach",
       "version": "latest",
       "cssFilePath": "plasmic/star_coach_landing_page/plasmic_star_coach_landing_page.module.css",
       "components": [
@@ -237,6 +237,19 @@
           "cssFilePath": "plasmic/star_coach_landing_page/PlasmicSection.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "UrIpDiN_eU",
+          "name": "Signup",
+          "type": "managed",
+          "projectId": "8kqtySnL71cyFF3GhKk7Hd",
+          "renderModuleFilePath": "plasmic/star_coach/PlasmicSignup.tsx",
+          "importSpec": {
+            "modulePath": "Signup.tsx"
+          },
+          "cssFilePath": "plasmic/star_coach/PlasmicSignup.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [
@@ -436,6 +449,36 @@
           "id": "kDII0OD3T",
           "name": "Youth Banner.jpg",
           "filePath": "plasmic/star_coach_landing_page/images/youthBannerjpg.jpg"
+        },
+        {
+          "id": "WRgKepyL6IB",
+          "name": "image",
+          "filePath": "plasmic/star_coach/images/image.svg"
+        },
+        {
+          "id": "Hk00OjT9NH9",
+          "name": "image 2",
+          "filePath": "plasmic/star_coach/images/image2.jpg"
+        },
+        {
+          "id": "k28vMC_4kF4",
+          "name": "image 3",
+          "filePath": "plasmic/star_coach/images/image3.jpg"
+        },
+        {
+          "id": "l5MWj74D77U",
+          "name": "image 4",
+          "filePath": "plasmic/star_coach/images/image4.jpg"
+        },
+        {
+          "id": "nooK5wJFg",
+          "name": "CHINA-ETHNIC-MINORITIES.jpg",
+          "filePath": "plasmic/star_coach/images/chinaEthnicMinoritieSjpg.jpg"
+        },
+        {
+          "id": "kTHb-MsOc",
+          "name": "main-qimg-8a29e1d7204aa9c6c16ee0904221e3a9-lq.jpg",
+          "filePath": "plasmic/star_coach/images/mainQimg8A29E1D7204Aa9C6C16Ee0904221E3A9Lqjpg.jpg"
         }
       ],
       "indirect": false,

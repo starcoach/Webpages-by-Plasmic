@@ -41,6 +41,15 @@
 .navbar:global(.__wab_instance) {
   width: 1691px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .navbar:global(.__wab_instance) {
+    width: 118.12%;
+    left: auto;
+    top: auto;
+    z-index: 1;
+    position: relative;
+  }
+}
 .columns___53Xl {
   display: flex;
   position: relative;
@@ -322,6 +331,12 @@
   font-weight: 800;
   color: var(--token-_hdGLw5ER-Ob);
   line-height: 1;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .h2__tddVw {
+    text-align: center;
+    font-size: 25px;
+  }
 }
 .text__wGtlD {
   font-size: 20px;
