@@ -86,13 +86,7 @@ export interface DefaultSignupProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicSignup__RenderFunc(props: {
   variants: PlasmicSignup__VariantsArgs;
@@ -102,45 +96,44 @@ function PlasmicSignup__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const [$queries, setDollarQueries] = React.useState({});
-
-  const stateSpecs = React.useMemo(
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "name.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
         path: "name2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
         path: "name5.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
         path: "name3.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -148,7 +141,7 @@ function PlasmicSignup__RenderFunc(props: {
   const $state = p.useDollarState(stateSpecs, {
     $props,
     $ctx,
-    $queries,
+    $queries: {},
     $refs
   });
 
@@ -183,34 +176,32 @@ function PlasmicSignup__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__qipos)}
             >
-              {true ? (
-                <a
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.a,
-                    sty.link__txXBl
-                  )}
-                >
-                  <p.PlasmicImg
-                    data-plasmic-name={"img"}
-                    data-plasmic-override={overrides.img}
-                    alt={""}
-                    className={classNames(sty.img)}
-                    displayHeight={"78px" as const}
-                    displayMaxHeight={"none" as const}
-                    displayMaxWidth={"78px" as const}
-                    displayMinHeight={"0" as const}
-                    displayMinWidth={"0" as const}
-                    displayWidth={"100%" as const}
-                    src={{
-                      src: showroom152PngLUiHsRaeS,
-                      fullWidth: 152,
-                      fullHeight: 152,
-                      aspectRatio: undefined
-                    }}
-                  />
-                </a>
-              ) : null}
+              <a
+                className={classNames(
+                  projectcss.all,
+                  projectcss.a,
+                  sty.link__txXBl
+                )}
+              >
+                <p.PlasmicImg
+                  data-plasmic-name={"img"}
+                  data-plasmic-override={overrides.img}
+                  alt={""}
+                  className={classNames(sty.img)}
+                  displayHeight={"78px"}
+                  displayMaxHeight={"none"}
+                  displayMaxWidth={"78px"}
+                  displayMinHeight={"0"}
+                  displayMinWidth={"0"}
+                  displayWidth={"100%"}
+                  src={{
+                    src: showroom152PngLUiHsRaeS,
+                    fullWidth: 152,
+                    fullHeight: 152,
+                    aspectRatio: undefined
+                  }}
+                />
+              </a>
               <p.Stack
                 as={"div"}
                 hasGap={true}
@@ -412,461 +403,423 @@ function PlasmicSignup__RenderFunc(props: {
               </p.Stack>
             </p.Stack>
           </div>
-          {true ? (
+          <p.Stack
+            as={"div"}
+            data-plasmic-name={"clientsSection5"}
+            data-plasmic-override={overrides.clientsSection5}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.clientsSection5)}
+          >
             <p.Stack
               as={"div"}
-              data-plasmic-name={"clientsSection5"}
-              data-plasmic-override={overrides.clientsSection5}
               hasGap={true}
-              className={classNames(projectcss.all, sty.clientsSection5)}
+              className={classNames(projectcss.all, sty.freeBox__xciFe)}
             >
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__xciFe)}
-              >
-                <div className={classNames(projectcss.all, sty.columns__ixwhu)}>
+              <div className={classNames(projectcss.all, sty.columns__ixwhu)}>
+                <div className={classNames(projectcss.all, sty.column__nfL50)}>
                   <div
-                    className={classNames(projectcss.all, sty.column__nfL50)}
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___4HhoW
+                    )}
+                  >
+                    {hasVariant(globalVariants, "screen", "mobileOnly")
+                      ? "Proactively architect worldwide sources, then globally implement enabled  users, then collaboratively innovate unique expertise, then continually  strategize excellent markets."
+                      : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."}
+                  </div>
+                </div>
+                <div className={classNames(projectcss.all, sty.column__rHxpp)}>
+                  <p.Stack
+                    as={"div"}
+                    hasGap={true}
+                    className={classNames(projectcss.all, sty.columns__alint)}
                   >
                     <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___4HhoW
-                      )}
-                    >
-                      {hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? "Proactively architect worldwide sources, then globally implement enabled  users, then collaboratively innovate unique expertise, then continually  strategize excellent markets."
-                        : "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."}
-                    </div>
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.column__rHxpp)}
-                  >
-                    <p.Stack
-                      as={"div"}
-                      hasGap={true}
-                      className={classNames(projectcss.all, sty.columns__alint)}
+                      className={classNames(projectcss.all, sty.column___5Kavl)}
                     >
                       <div
-                        className={classNames(
-                          projectcss.all,
-                          sty.column___5Kavl
-                        )}
+                        data-plasmic-name={"formWrapper"}
+                        data-plasmic-override={overrides.formWrapper}
+                        className={classNames(projectcss.all, sty.formWrapper)}
                       >
                         <div
-                          data-plasmic-name={"formWrapper"}
-                          data-plasmic-override={overrides.formWrapper}
                           className={classNames(
                             projectcss.all,
-                            sty.formWrapper
+                            sty.columns___5AvEh
                           )}
                         >
                           <div
                             className={classNames(
                               projectcss.all,
-                              sty.columns___5AvEh
+                              sty.column___2NKwa
                             )}
                           >
                             <div
                               className={classNames(
                                 projectcss.all,
-                                sty.column___2NKwa
+                                projectcss.__wab_text,
+                                sty.text__goEI
                               )}
                             >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__goEI
-                                )}
-                              >
-                                {"First name"}
-                              </div>
-                              {true ? (
-                                <TextInput
-                                  data-plasmic-name={"name"}
-                                  data-plasmic-override={overrides.name}
+                              {"First name"}
+                            </div>
+                            <TextInput
+                              data-plasmic-name={"name"}
+                              data-plasmic-override={overrides.name}
+                              className={classNames("__wab_instance", sty.name)}
+                              endIcon={
+                                <ChecksvgIcon
                                   className={classNames(
-                                    "__wab_instance",
-                                    sty.name
+                                    projectcss.all,
+                                    sty.svg__opHuM
                                   )}
-                                  endIcon={
-                                    true ? (
-                                      <ChecksvgIcon
-                                        className={classNames(
-                                          projectcss.all,
-                                          sty.svg__opHuM
-                                        )}
-                                        role={"img"}
-                                      />
-                                    ) : null
-                                  }
-                                  onChange={(...eventArgs) => {
-                                    p.generateStateOnChangeProp($state, [
-                                      "name",
-                                      "value"
-                                    ])(
-                                      (e => e.target?.value).apply(
-                                        null,
-                                        eventArgs
-                                      )
-                                    );
-                                  }}
-                                  placeholder={"" as const}
-                                  startIcon={
-                                    <SearchIcon
-                                      className={classNames(
-                                        projectcss.all,
-                                        sty.svg__nxk0U
-                                      )}
-                                      role={"img"}
-                                    />
-                                  }
-                                  value={
-                                    p.generateStateValueProp($state, [
-                                      "name",
-                                      "value"
-                                    ]) ?? ""
-                                  }
+                                  role={"img"}
                                 />
-                              ) : null}
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                sty.column__rlwGd
-                              )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text___36Lk4
-                                )}
-                              >
-                                {"Last name"}
-                              </div>
-                              <TextInput
-                                data-plasmic-name={"name2"}
-                                data-plasmic-override={overrides.name2}
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.name2
-                                )}
-                                endIcon={
-                                  <ChecksvgIcon
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.svg__nDg48
-                                    )}
-                                    role={"img"}
-                                  />
-                                }
-                                onChange={(...eventArgs) => {
-                                  p.generateStateOnChangeProp($state, [
-                                    "name2",
-                                    "value"
-                                  ])(
-                                    (e => e.target?.value).apply(
-                                      null,
-                                      eventArgs
-                                    )
-                                  );
-                                }}
-                                placeholder={"" as const}
-                                startIcon={
-                                  <SearchIcon
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.svg___4P3Hd
-                                    )}
-                                    role={"img"}
-                                  />
-                                }
-                                value={
-                                  p.generateStateValueProp($state, [
-                                    "name2",
-                                    "value"
-                                  ]) ?? ""
-                                }
-                              />
-                            </div>
+                              }
+                              onChange={(...eventArgs) => {
+                                p.generateStateOnChangeProp($state, [
+                                  "name",
+                                  "value"
+                                ])(
+                                  (e => e.target?.value).apply(null, eventArgs)
+                                );
+                              }}
+                              placeholder={""}
+                              startIcon={
+                                <SearchIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__nxk0U
+                                  )}
+                                  role={"img"}
+                                />
+                              }
+                              value={
+                                p.generateStateValueProp($state, [
+                                  "name",
+                                  "value"
+                                ]) ?? ""
+                              }
+                            />
                           </div>
                           <div
                             className={classNames(
                               projectcss.all,
-                              sty.columns__kvvww
+                              sty.column__rlwGd
                             )}
                           >
                             <div
                               className={classNames(
                                 projectcss.all,
-                                sty.column__tcdOh
+                                projectcss.__wab_text,
+                                sty.text___36Lk4
                               )}
                             >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text__asXpg
-                                )}
-                              >
-                                {"Email address"}
-                              </div>
-                              <TextInput
-                                data-plasmic-name={"name5"}
-                                data-plasmic-override={overrides.name5}
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.name5
-                                )}
-                                endIcon={
-                                  <ChecksvgIcon
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.svg___0Blhh
-                                    )}
-                                    role={"img"}
-                                  />
-                                }
-                                onChange={(...eventArgs) => {
-                                  p.generateStateOnChangeProp($state, [
-                                    "name5",
-                                    "value"
-                                  ])(
-                                    (e => e.target?.value).apply(
-                                      null,
-                                      eventArgs
-                                    )
-                                  );
-                                }}
-                                placeholder={"" as const}
-                                startIcon={
-                                  <SearchIcon
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.svg__gFg3C
-                                    )}
-                                    role={"img"}
-                                  />
-                                }
-                                value={
-                                  p.generateStateValueProp($state, [
-                                    "name5",
-                                    "value"
-                                  ]) ?? ""
-                                }
-                              />
+                              {"Last name"}
                             </div>
-                            <div
+                            <TextInput
+                              data-plasmic-name={"name2"}
+                              data-plasmic-override={overrides.name2}
                               className={classNames(
-                                projectcss.all,
-                                sty.column___5Zvl9
+                                "__wab_instance",
+                                sty.name2
                               )}
-                            >
-                              <div
-                                className={classNames(
-                                  projectcss.all,
-                                  projectcss.__wab_text,
-                                  sty.text___75X5Z
-                                )}
-                              >
-                                {"Password"}
-                              </div>
-                              <TextInput
-                                data-plasmic-name={"name3"}
-                                data-plasmic-override={overrides.name3}
-                                className={classNames(
-                                  "__wab_instance",
-                                  sty.name3
-                                )}
-                                endIcon={
-                                  <ChecksvgIcon
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.svg__fky2U
-                                    )}
-                                    role={"img"}
-                                  />
-                                }
-                                onChange={(...eventArgs) => {
-                                  p.generateStateOnChangeProp($state, [
-                                    "name3",
-                                    "value"
-                                  ])(
-                                    (e => e.target?.value).apply(
-                                      null,
-                                      eventArgs
-                                    )
-                                  );
-                                }}
-                                placeholder={"" as const}
-                                startIcon={
-                                  <SearchIcon
-                                    className={classNames(
-                                      projectcss.all,
-                                      sty.svg__znAtg
-                                    )}
-                                    role={"img"}
-                                  />
-                                }
-                                value={
-                                  p.generateStateValueProp($state, [
-                                    "name3",
-                                    "value"
-                                  ]) ?? ""
-                                }
-                              />
-                            </div>
+                              endIcon={
+                                <ChecksvgIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__nDg48
+                                  )}
+                                  role={"img"}
+                                />
+                              }
+                              onChange={(...eventArgs) => {
+                                p.generateStateOnChangeProp($state, [
+                                  "name2",
+                                  "value"
+                                ])(
+                                  (e => e.target?.value).apply(null, eventArgs)
+                                );
+                              }}
+                              placeholder={""}
+                              startIcon={
+                                <SearchIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg___4P3Hd
+                                  )}
+                                  role={"img"}
+                                />
+                              }
+                              value={
+                                p.generateStateValueProp($state, [
+                                  "name2",
+                                  "value"
+                                ]) ?? ""
+                              }
+                            />
                           </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.columns__kvvww
+                          )}
+                        >
                           <div
                             className={classNames(
                               projectcss.all,
-                              sty.columns__c3PhI
+                              sty.column__tcdOh
                             )}
                           >
                             <div
                               className={classNames(
                                 projectcss.all,
-                                sty.column__cqxH5
+                                projectcss.__wab_text,
+                                sty.text__asXpg
                               )}
                             >
-                              {true ? (
+                              {"Email address"}
+                            </div>
+                            <TextInput
+                              data-plasmic-name={"name5"}
+                              data-plasmic-override={overrides.name5}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.name5
+                              )}
+                              endIcon={
+                                <ChecksvgIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg___0Blhh
+                                  )}
+                                  role={"img"}
+                                />
+                              }
+                              onChange={(...eventArgs) => {
+                                p.generateStateOnChangeProp($state, [
+                                  "name5",
+                                  "value"
+                                ])(
+                                  (e => e.target?.value).apply(null, eventArgs)
+                                );
+                              }}
+                              placeholder={""}
+                              startIcon={
+                                <SearchIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__gFg3C
+                                  )}
+                                  role={"img"}
+                                />
+                              }
+                              value={
+                                p.generateStateValueProp($state, [
+                                  "name5",
+                                  "value"
+                                ]) ?? ""
+                              }
+                            />
+                          </div>
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.column___5Zvl9
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                projectcss.__wab_text,
+                                sty.text___75X5Z
+                              )}
+                            >
+                              {"Password"}
+                            </div>
+                            <TextInput
+                              data-plasmic-name={"name3"}
+                              data-plasmic-override={overrides.name3}
+                              className={classNames(
+                                "__wab_instance",
+                                sty.name3
+                              )}
+                              endIcon={
+                                <ChecksvgIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__fky2U
+                                  )}
+                                  role={"img"}
+                                />
+                              }
+                              onChange={(...eventArgs) => {
+                                p.generateStateOnChangeProp($state, [
+                                  "name3",
+                                  "value"
+                                ])(
+                                  (e => e.target?.value).apply(null, eventArgs)
+                                );
+                              }}
+                              placeholder={""}
+                              startIcon={
+                                <SearchIcon
+                                  className={classNames(
+                                    projectcss.all,
+                                    sty.svg__znAtg
+                                  )}
+                                  role={"img"}
+                                />
+                              }
+                              value={
+                                p.generateStateValueProp($state, [
+                                  "name3",
+                                  "value"
+                                ]) ?? ""
+                              }
+                            />
+                          </div>
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            sty.columns__c3PhI
+                          )}
+                        >
+                          <div
+                            className={classNames(
+                              projectcss.all,
+                              sty.column__cqxH5
+                            )}
+                          >
+                            <div
+                              className={classNames(
+                                projectcss.all,
+                                sty.freeBox__ov9Ut
+                              )}
+                            >
+                              <Button
+                                className={classNames(
+                                  "__wab_instance",
+                                  sty.button__sDgrH
+                                )}
+                                endIcon={
+                                  <ChecksvgIcon
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.svg__x06Sb
+                                    )}
+                                    role={"img"}
+                                  />
+                                }
+                                startIcon={
+                                  <ChecksvgIcon
+                                    className={classNames(
+                                      projectcss.all,
+                                      sty.svg__wl4Hd
+                                    )}
+                                    role={"img"}
+                                  />
+                                }
+                                submitsForm={true}
+                              >
                                 <div
                                   className={classNames(
                                     projectcss.all,
-                                    sty.freeBox__ov9Ut
+                                    projectcss.__wab_text,
+                                    sty.text__nacpl
                                   )}
                                 >
-                                  <Button
-                                    className={classNames(
-                                      "__wab_instance",
-                                      sty.button__sDgrH
-                                    )}
-                                    endIcon={
-                                      <ChecksvgIcon
-                                        className={classNames(
-                                          projectcss.all,
-                                          sty.svg__x06Sb
-                                        )}
-                                        role={"img"}
-                                      />
-                                    }
-                                    startIcon={
-                                      <ChecksvgIcon
-                                        className={classNames(
-                                          projectcss.all,
-                                          sty.svg__wl4Hd
-                                        )}
-                                        role={"img"}
-                                      />
-                                    }
-                                    submitsForm={true}
-                                  >
-                                    <div
-                                      className={classNames(
-                                        projectcss.all,
-                                        projectcss.__wab_text,
-                                        sty.text__nacpl
-                                      )}
-                                    >
-                                      {"Submit"}
-                                    </div>
-                                  </Button>
+                                  {"Submit"}
                                 </div>
-                              ) : null}
+                              </Button>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div
+                    </div>
+                    <div
+                      className={classNames(projectcss.all, sty.column__ttKy0)}
+                    >
+                      <p.Stack
+                        as={"div"}
+                        hasGap={true}
                         className={classNames(
                           projectcss.all,
-                          sty.column__ttKy0
+                          sty.freeBox__zPzff
                         )}
                       >
-                        {true ? (
-                          <p.Stack
-                            as={"div"}
-                            hasGap={true}
-                            className={classNames(
-                              projectcss.all,
-                              sty.freeBox__zPzff
-                            )}
-                          >
-                            <h2
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.h2,
-                                projectcss.__wab_text,
-                                sty.h2__xbJy
-                              )}
-                            >
-                              {"Address"}
-                            </h2>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__s3PLx
-                              )}
-                            >
-                              {
-                                "1234 Lorem Ipsum .\nLorem Ipsum , GA 30308\n1234567890"
-                              }
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__sbWoC
-                              )}
-                            >
-                              {"xyz@companyname.com"}
-                            </div>
-                            <h4
-                              data-plasmic-name={"h4"}
-                              data-plasmic-override={overrides.h4}
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.h4,
-                                projectcss.__wab_text,
-                                sty.h4
-                              )}
-                            >
-                              {"Address 2"}
-                            </h4>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__r9NHb
-                              )}
-                            >
-                              {
-                                "1234 Lorem Ipsum .\nLorem Ipsum , GA 30308\n1234567890"
-                              }
-                            </div>
-                            <div
-                              className={classNames(
-                                projectcss.all,
-                                projectcss.__wab_text,
-                                sty.text__zfCg
-                              )}
-                            >
-                              {"xyz@companyname.com"}
-                            </div>
-                          </p.Stack>
-                        ) : null}
-                      </div>
-                    </p.Stack>
-                  </div>
+                        <h2
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h2,
+                            projectcss.__wab_text,
+                            sty.h2__xbJy
+                          )}
+                        >
+                          {"Address"}
+                        </h2>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__s3PLx
+                          )}
+                        >
+                          {
+                            "1234 Lorem Ipsum .\nLorem Ipsum , GA 30308\n1234567890"
+                          }
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__sbWoC
+                          )}
+                        >
+                          {"xyz@companyname.com"}
+                        </div>
+                        <h4
+                          data-plasmic-name={"h4"}
+                          data-plasmic-override={overrides.h4}
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.h4,
+                            projectcss.__wab_text,
+                            sty.h4
+                          )}
+                        >
+                          {"Address 2"}
+                        </h4>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__r9NHb
+                          )}
+                        >
+                          {
+                            "1234 Lorem Ipsum .\nLorem Ipsum , GA 30308\n1234567890"
+                          }
+                        </div>
+                        <div
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.__wab_text,
+                            sty.text__zfCg
+                          )}
+                        >
+                          {"xyz@companyname.com"}
+                        </div>
+                      </p.Stack>
+                    </div>
+                  </p.Stack>
                 </div>
-              </p.Stack>
+              </div>
             </p.Stack>
-          ) : null}
+          </p.Stack>
           <div
             data-plasmic-name={"footerTopSection"}
             data-plasmic-override={overrides.footerTopSection}
@@ -964,246 +917,244 @@ function PlasmicSignup__RenderFunc(props: {
             </div>
           </div>
           <div className={classNames(projectcss.all, sty.freeBox__sojCd)}>
-            {true ? (
-              <div className={classNames(projectcss.all, sty.freeBox__xFlVe)}>
-                <p.Stack
-                  as={"div"}
-                  data-plasmic-name={"rowWrapper"}
-                  data-plasmic-override={overrides.rowWrapper}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.rowWrapper)}
+            <div className={classNames(projectcss.all, sty.freeBox__xFlVe)}>
+              <p.Stack
+                as={"div"}
+                data-plasmic-name={"rowWrapper"}
+                data-plasmic-override={overrides.rowWrapper}
+                hasGap={true}
+                className={classNames(projectcss.all, sty.rowWrapper)}
+              >
+                <div
+                  data-plasmic-name={"colmn1"}
+                  data-plasmic-override={overrides.colmn1}
+                  className={classNames(projectcss.all, sty.colmn1)}
                 >
-                  <div
-                    data-plasmic-name={"colmn1"}
-                    data-plasmic-override={overrides.colmn1}
-                    className={classNames(projectcss.all, sty.colmn1)}
+                  <h3
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h3,
+                      projectcss.__wab_text,
+                      sty.h3__lKhSj
+                    )}
                   >
-                    <h3
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h3,
-                        projectcss.__wab_text,
-                        sty.h3__lKhSj
-                      )}
-                    >
-                      {"About us"}
-                    </h3>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__svgEn
-                      )}
-                    >
+                    {"About us"}
+                  </h3>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text__svgEn
+                    )}
+                  >
+                    <React.Fragment>
                       <React.Fragment>
-                        <React.Fragment>
-                          {
-                            "\u00a9 Company. All rights reserved. This site proudly built with "
-                          }
-                        </React.Fragment>
                         {
-                          <a
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.a,
-                              projectcss.__wab_text,
-                              projectcss.plasmic_default__inline,
-                              sty.link__swkZi
-                            )}
-                            href={"https://www.plasmic.app" as const}
-                          >
-                            {"Plasmic"}
-                          </a>
+                          "\u00a9 Company. All rights reserved. This site proudly built with "
                         }
-                        <React.Fragment>{"."}</React.Fragment>
                       </React.Fragment>
-                    </div>
+                      {
+                        <a
+                          className={classNames(
+                            projectcss.all,
+                            projectcss.a,
+                            projectcss.__wab_text,
+                            projectcss.plasmic_default__inline,
+                            sty.link__swkZi
+                          )}
+                          href={"https://www.plasmic.app"}
+                        >
+                          {"Plasmic"}
+                        </a>
+                      }
+                      <React.Fragment>{"."}</React.Fragment>
+                    </React.Fragment>
                   </div>
-                  <div
-                    data-plasmic-name={"colmn2"}
-                    data-plasmic-override={overrides.colmn2}
-                    className={classNames(projectcss.all, sty.colmn2)}
+                </div>
+                <div
+                  data-plasmic-name={"colmn2"}
+                  data-plasmic-override={overrides.colmn2}
+                  className={classNames(projectcss.all, sty.colmn2)}
+                >
+                  <h3
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h3,
+                      projectcss.__wab_text,
+                      sty.h3___9Ozw
+                    )}
                   >
-                    <h3
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h3,
-                        projectcss.__wab_text,
-                        sty.h3___9Ozw
-                      )}
-                    >
-                      {"Links"}
-                    </h3>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link___9UuZg
-                      )}
-                    >
-                      {"Services"}
-                    </a>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__ryJui
-                      )}
-                    >
-                      {"About us"}
-                    </a>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__narvv
-                      )}
-                      href={"#" as const}
-                    >
-                      {"Testimonials"}
-                    </a>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__huyOg
-                      )}
-                      href={"#" as const}
-                    >
-                      {"Blog"}
-                    </a>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__nkXcW
-                      )}
-                    >
-                      {"Contact us\n"}
-                    </a>
-                  </div>
-                  <div
-                    data-plasmic-name={"colmn22"}
-                    data-plasmic-override={overrides.colmn22}
-                    className={classNames(projectcss.all, sty.colmn22)}
+                    {"Links"}
+                  </h3>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link___9UuZg
+                    )}
                   >
-                    <h3
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h3,
-                        projectcss.__wab_text,
-                        sty.h3__pjMwn
-                      )}
-                    >
-                      {"Nav Links"}
-                    </h3>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__rzg1
-                      )}
-                    >
-                      {"Services"}
-                    </a>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__jPzAh
-                      )}
-                    >
-                      {"About us"}
-                    </a>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link___0Wh7U
-                      )}
-                    >
-                      {"Testimonials"}
-                    </a>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__tFtU
-                      )}
-                      href={"#" as const}
-                    >
-                      {"Blog"}
-                    </a>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__xRuT0
-                      )}
-                    >
-                      {"Contact us\n"}
-                    </a>
-                  </div>
-                  <div
-                    data-plasmic-name={"colmn3"}
-                    data-plasmic-override={overrides.colmn3}
-                    className={classNames(projectcss.all, sty.colmn3)}
+                    {"Services"}
+                  </a>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__ryJui
+                    )}
                   >
-                    <h3
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.h3,
-                        projectcss.__wab_text,
-                        sty.h3__dcPc4
-                      )}
-                    >
-                      {"Contact "}
-                    </h3>
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___9ZpGg
-                      )}
-                    >
-                      {"1234 Lorem Ipsum .\nLorem Ipsum , GA 30308"}
-                    </div>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link___2Dhpa
-                      )}
-                      href={"#" as const}
-                    >
-                      {"xyz@company.com"}
-                    </a>
-                    <a
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.a,
-                        projectcss.__wab_text,
-                        sty.link__vVqdF
-                      )}
-                      href={"#" as const}
-                    >
-                      {"1234567890"}
-                    </a>
+                    {"About us"}
+                  </a>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__narvv
+                    )}
+                    href={"#"}
+                  >
+                    {"Testimonials"}
+                  </a>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__huyOg
+                    )}
+                    href={"#"}
+                  >
+                    {"Blog"}
+                  </a>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__nkXcW
+                    )}
+                  >
+                    {"Contact us\n"}
+                  </a>
+                </div>
+                <div
+                  data-plasmic-name={"colmn22"}
+                  data-plasmic-override={overrides.colmn22}
+                  className={classNames(projectcss.all, sty.colmn22)}
+                >
+                  <h3
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h3,
+                      projectcss.__wab_text,
+                      sty.h3__pjMwn
+                    )}
+                  >
+                    {"Nav Links"}
+                  </h3>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__rzg1
+                    )}
+                  >
+                    {"Services"}
+                  </a>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__jPzAh
+                    )}
+                  >
+                    {"About us"}
+                  </a>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link___0Wh7U
+                    )}
+                  >
+                    {"Testimonials"}
+                  </a>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__tFtU
+                    )}
+                    href={"#"}
+                  >
+                    {"Blog"}
+                  </a>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__xRuT0
+                    )}
+                  >
+                    {"Contact us\n"}
+                  </a>
+                </div>
+                <div
+                  data-plasmic-name={"colmn3"}
+                  data-plasmic-override={overrides.colmn3}
+                  className={classNames(projectcss.all, sty.colmn3)}
+                >
+                  <h3
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.h3,
+                      projectcss.__wab_text,
+                      sty.h3__dcPc4
+                    )}
+                  >
+                    {"Contact "}
+                  </h3>
+                  <div
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.__wab_text,
+                      sty.text___9ZpGg
+                    )}
+                  >
+                    {"1234 Lorem Ipsum .\nLorem Ipsum , GA 30308"}
                   </div>
-                </p.Stack>
-              </div>
-            ) : null}
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link___2Dhpa
+                    )}
+                    href={"#"}
+                  >
+                    {"xyz@company.com"}
+                  </a>
+                  <a
+                    className={classNames(
+                      projectcss.all,
+                      projectcss.a,
+                      projectcss.__wab_text,
+                      sty.link__vVqdF
+                    )}
+                    href={"#"}
+                  >
+                    {"1234567890"}
+                  </a>
+                </div>
+              </p.Stack>
+            </div>
           </div>
         </div>
       </div>
@@ -1266,7 +1217,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   img: typeof p.PlasmicImg;

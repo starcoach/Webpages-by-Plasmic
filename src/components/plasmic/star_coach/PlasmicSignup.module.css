@@ -903,7 +903,6 @@
   position: relative;
   height: 45px;
   flex-shrink: 0;
-  display: flex;
 }
 .svg__nxk0U {
   position: relative;
@@ -916,7 +915,6 @@
   object-fit: cover;
   width: 1em;
   height: 1em;
-  display: block;
 }
 .column__rlwGd {
   display: flex;

@@ -99,13 +99,7 @@ export interface DefaultHomepageProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicHomepage__RenderFunc(props: {
   variants: PlasmicHomepage__VariantsArgs;
@@ -115,19 +109,18 @@ function PlasmicHomepage__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantscahMfBb9YIj2()
@@ -266,57 +259,50 @@ function PlasmicHomepage__RenderFunc(props: {
                     hasGap={true}
                     className={classNames(projectcss.all, sty.freeBox__g28Us)}
                   >
-                    {true ? (
-                      <Button
+                    <Button
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__gL7Wo
+                      )}
+                      color={"darkGray"}
+                      endIcon={
+                        <ChevronRightIcon
+                          className={classNames(projectcss.all, sty.svg__a9Tph)}
+                          role={"img"}
+                        />
+                      }
+                      showEndIcon={true}
+                      submitsForm={true}
+                    >
+                      <div
                         className={classNames(
-                          "__wab_instance",
-                          sty.button__gL7Wo
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__eIboz
                         )}
-                        color={"darkGray" as const}
-                        endIcon={
-                          <ChevronRightIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__a9Tph
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        showEndIcon={true}
-                        submitsForm={true}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__eIboz
-                          )}
-                        >
-                          {"Join For Free"}
-                        </div>
-                      </Button>
-                    ) : null}
-                    {true ? (
-                      <Button
-                        bgDifference={true}
+                        {"Join For Free"}
+                      </div>
+                    </Button>
+                    <Button
+                      bgDifference={true}
+                      className={classNames(
+                        "__wab_instance",
+                        sty.button__fuHfW
+                      )}
+                      color={"darkGray"}
+                      submitsForm={true}
+                    >
+                      <div
                         className={classNames(
-                          "__wab_instance",
-                          sty.button__fuHfW
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__d1B6S
                         )}
-                        color={"darkGray" as const}
-                        submitsForm={true}
                       >
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__d1B6S
-                          )}
-                        >
-                          {"Learn more\u2026"}
-                        </div>
-                      </Button>
-                    ) : null}
+                        {"Learn more\u2026"}
+                      </div>
+                    </Button>
                   </p.Stack>
                 </p.Stack>
               </div>
@@ -348,7 +334,15 @@ function PlasmicHomepage__RenderFunc(props: {
                     sty.h2__tddVw
                   )}
                 >
-                  {"Your Personal Language Coach"}
+                  <React.Fragment>
+                    <span
+                      className={"plasmic_default__all plasmic_default__span"}
+                      style={{ color: "#6D54B9" }}
+                    >
+                      {"Holistic Language Lessons Personally Designd for You"}
+                    </span>
+                    <React.Fragment>{"\nJoin for Free!"}</React.Fragment>
+                  </React.Fragment>
                 </h2>
               </div>
               <div
@@ -524,7 +518,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <Section
             data-plasmic-name={"checkpointsSection"}
             data-plasmic-override={overrides.checkpointsSection}
-            background={"dark" as const}
+            background={"dark"}
             className={classNames("__wab_instance", sty.checkpointsSection)}
           >
             <p.Stack
@@ -533,8 +527,8 @@ function PlasmicHomepage__RenderFunc(props: {
               className={classNames(projectcss.all, sty.columns__zPtyJ)}
               id={
                 hasVariant(globalVariants, "screen", "mobileOnly")
-                  ? ("features" as const)
-                  : ("features" as const)
+                  ? "features"
+                  : "features"
               }
             >
               <div className={classNames(projectcss.all, sty.column__eax65)}>
@@ -602,8 +596,8 @@ function PlasmicHomepage__RenderFunc(props: {
                   <ListItem
                     bottomBorder={
                       hasVariant(globalVariants, "screen", "mobileOnly")
-                        ? ("dark" as const)
-                        : ("dark" as const)
+                        ? "dark"
+                        : "dark"
                     }
                     className={classNames(
                       "__wab_instance",
@@ -627,7 +621,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     </div>
                   </ListItem>
                   <ListItem
-                    bottomBorder={"dark" as const}
+                    bottomBorder={"dark"}
                     className={classNames(
                       "__wab_instance",
                       sty.listItem___9NEdp
@@ -650,7 +644,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     </div>
                   </ListItem>
                   <ListItem
-                    bottomBorder={"dark" as const}
+                    bottomBorder={"dark"}
                     className={classNames(
                       "__wab_instance",
                       sty.listItem__sJnP9
@@ -673,7 +667,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     </div>
                   </ListItem>
                   <ListItem
-                    bottomBorder={"dark" as const}
+                    bottomBorder={"dark"}
                     className={classNames(
                       "__wab_instance",
                       sty.listItem__kf3Jt
@@ -724,7 +718,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <Section
             data-plasmic-name={"pricingSection"}
             data-plasmic-override={overrides.pricingSection}
-            background={"dark" as const}
+            background={"dark"}
             className={classNames("__wab_instance", sty.pricingSection)}
           >
             <p.Stack
@@ -1019,23 +1013,81 @@ function PlasmicHomepage__RenderFunc(props: {
               </p.Stack>
             </p.Stack>
           </Section>
-          {true ? (
-            <Section
-              data-plasmic-name={"shopBannersSection"}
-              data-plasmic-override={overrides.shopBannersSection}
-              className={classNames("__wab_instance", sty.shopBannersSection)}
-              size={"fullContentWidth" as const}
+          <Section
+            data-plasmic-name={"shopBannersSection"}
+            data-plasmic-override={overrides.shopBannersSection}
+            className={classNames("__wab_instance", sty.shopBannersSection)}
+            size={"fullContentWidth"}
+          >
+            <p.Stack
+              as={"div"}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.freeBox__f9MMg)}
             >
+              <Banner
+                className={classNames("__wab_instance", sty.banner__k4LJp)}
+                image={{
+                  src: sunglassesMalePSac31GJqn,
+                  fullWidth: 2851,
+                  fullHeight: 1900,
+                  aspectRatio: undefined
+                }}
+                left={
+                  <React.Fragment>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__zZK2
+                      )}
+                    >
+                      {"Sunglasses Collection"}
+                    </div>
+                    <div
+                      className={classNames(
+                        projectcss.all,
+                        projectcss.__wab_text,
+                        sty.text__nMtt
+                      )}
+                    >
+                      {"Get 25% off on selected items"}
+                    </div>
+                    <Button
+                      color={"link"}
+                      endIcon={
+                        <ChevronRightIcon
+                          className={classNames(projectcss.all, sty.svg__jq2Wz)}
+                          role={"img"}
+                        />
+                      }
+                      flat={true}
+                      showEndIcon={true}
+                      submitsForm={true}
+                    >
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text___2Anjs
+                        )}
+                      >
+                        {"Go to collection"}
+                      </div>
+                    </Button>
+                  </React.Fragment>
+                }
+              />
+
               <p.Stack
                 as={"div"}
                 hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__f9MMg)}
+                className={classNames(projectcss.all, sty.freeBox__p9PAs)}
               >
                 <Banner
-                  className={classNames("__wab_instance", sty.banner__k4LJp)}
+                  className={classNames("__wab_instance", sty.banner___535Ot)}
                   image={{
-                    src: sunglassesMalePSac31GJqn,
-                    fullWidth: 2851,
+                    src: sneakersUmDead0NoOka,
+                    fullWidth: 2850,
                     fullHeight: 1900,
                     aspectRatio: undefined
                   }}
@@ -1045,27 +1097,27 @@ function PlasmicHomepage__RenderFunc(props: {
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__zZK2
+                          sty.text__oFqfs
                         )}
                       >
-                        {"Sunglasses Collection"}
+                        {"Sneakers\nCollection"}
                       </div>
                       <div
                         className={classNames(
                           projectcss.all,
                           projectcss.__wab_text,
-                          sty.text__nMtt
+                          sty.text__fztpK
                         )}
                       >
                         {"Get 25% off on selected items"}
                       </div>
                       <Button
-                        color={"link" as const}
+                        color={"link"}
                         endIcon={
                           <ChevronRightIcon
                             className={classNames(
                               projectcss.all,
-                              sty.svg__jq2Wz
+                              sty.svg__wkTab
                             )}
                             role={"img"}
                           />
@@ -1078,7 +1130,7 @@ function PlasmicHomepage__RenderFunc(props: {
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text___2Anjs
+                            sty.text___93Mli
                           )}
                         >
                           {"Go to collection"}
@@ -1088,128 +1140,65 @@ function PlasmicHomepage__RenderFunc(props: {
                   }
                 />
 
-                <p.Stack
-                  as={"div"}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.freeBox__p9PAs)}
-                >
-                  <Banner
-                    className={classNames("__wab_instance", sty.banner___535Ot)}
-                    image={{
-                      src: sneakersUmDead0NoOka,
-                      fullWidth: 2850,
-                      fullHeight: 1900,
-                      aspectRatio: undefined
-                    }}
-                    left={
-                      <React.Fragment>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__oFqfs
-                          )}
-                        >
-                          {"Sneakers\nCollection"}
-                        </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__fztpK
-                          )}
-                        >
-                          {"Get 25% off on selected items"}
-                        </div>
-                        <Button
-                          color={"link" as const}
-                          endIcon={
-                            <ChevronRightIcon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg__wkTab
-                              )}
-                              role={"img"}
-                            />
-                          }
-                          flat={true}
-                          showEndIcon={true}
-                          submitsForm={true}
-                        >
-                          <div
+                <Banner
+                  className={classNames("__wab_instance", sty.banner__fbxHn)}
+                  image={{
+                    src: shirtWoman3YnJbWpxEzL,
+                    fullWidth: 1834,
+                    fullHeight: 2751,
+                    aspectRatio: undefined
+                  }}
+                  left={
+                    <React.Fragment>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__b49JK
+                        )}
+                      >
+                        {"Shirts\nCollection"}
+                      </div>
+                      <div
+                        className={classNames(
+                          projectcss.all,
+                          projectcss.__wab_text,
+                          sty.text__h12My
+                        )}
+                      >
+                        {"Get 25% off on selected items"}
+                      </div>
+                      <Button
+                        color={"link"}
+                        endIcon={
+                          <ChevronRightIcon
                             className={classNames(
                               projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text___93Mli
+                              sty.svg___6VkJo
                             )}
-                          >
-                            {"Go to collection"}
-                          </div>
-                        </Button>
-                      </React.Fragment>
-                    }
-                  />
-
-                  <Banner
-                    className={classNames("__wab_instance", sty.banner__fbxHn)}
-                    image={{
-                      src: shirtWoman3YnJbWpxEzL,
-                      fullWidth: 1834,
-                      fullHeight: 2751,
-                      aspectRatio: undefined
-                    }}
-                    left={
-                      <React.Fragment>
+                            role={"img"}
+                          />
+                        }
+                        flat={true}
+                        showEndIcon={true}
+                        submitsForm={true}
+                      >
                         <div
                           className={classNames(
                             projectcss.all,
                             projectcss.__wab_text,
-                            sty.text__b49JK
+                            sty.text__vpr4
                           )}
                         >
-                          {"Shirts\nCollection"}
+                          {"Go to collection"}
                         </div>
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__h12My
-                          )}
-                        >
-                          {"Get 25% off on selected items"}
-                        </div>
-                        <Button
-                          color={"link" as const}
-                          endIcon={
-                            <ChevronRightIcon
-                              className={classNames(
-                                projectcss.all,
-                                sty.svg___6VkJo
-                              )}
-                              role={"img"}
-                            />
-                          }
-                          flat={true}
-                          showEndIcon={true}
-                          submitsForm={true}
-                        >
-                          <div
-                            className={classNames(
-                              projectcss.all,
-                              projectcss.__wab_text,
-                              sty.text__vpr4
-                            )}
-                          >
-                            {"Go to collection"}
-                          </div>
-                        </Button>
-                      </React.Fragment>
-                    }
-                  />
-                </p.Stack>
+                      </Button>
+                    </React.Fragment>
+                  }
+                />
               </p.Stack>
-            </Section>
-          ) : null}
+            </p.Stack>
+          </Section>
           <Section
             data-plasmic-name={"logoCloudSection"}
             data-plasmic-override={overrides.logoCloudSection}
@@ -1223,12 +1212,12 @@ function PlasmicHomepage__RenderFunc(props: {
               <p.PlasmicImg
                 alt={""}
                 className={classNames(sty.img___15Ban)}
-                displayHeight={"48px" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"none" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
+                displayHeight={"48px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
                 src={{
                   src: loomPsWcmqGSzqPo,
                   fullWidth: 300,
@@ -1240,12 +1229,12 @@ function PlasmicHomepage__RenderFunc(props: {
               <p.PlasmicImg
                 alt={""}
                 className={classNames(sty.img__ifjnj)}
-                displayHeight={"48px" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"none" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
+                displayHeight={"48px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
                 src={{
                   src: strapiYJ6AhZetDe4I,
                   fullWidth: 300,
@@ -1257,12 +1246,12 @@ function PlasmicHomepage__RenderFunc(props: {
               <p.PlasmicImg
                 alt={""}
                 className={classNames(sty.img__p4P8Z)}
-                displayHeight={"48px" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"none" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
+                displayHeight={"48px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
                 src={{
                   src: segmentVFaiqnQ2Lezp,
                   fullWidth: 300,
@@ -1274,12 +1263,12 @@ function PlasmicHomepage__RenderFunc(props: {
               <p.PlasmicImg
                 alt={""}
                 className={classNames(sty.img__dHgAq)}
-                displayHeight={"48px" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"none" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
+                displayHeight={"48px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
                 src={{
                   src: xstateWSdK4O0Vyr7G,
                   fullWidth: 300,
@@ -1291,12 +1280,12 @@ function PlasmicHomepage__RenderFunc(props: {
               <p.PlasmicImg
                 alt={""}
                 className={classNames(sty.img__qaVf7)}
-                displayHeight={"48px" as const}
-                displayMaxHeight={"none" as const}
-                displayMaxWidth={"none" as const}
-                displayMinHeight={"0" as const}
-                displayMinWidth={"0" as const}
-                displayWidth={"auto" as const}
+                displayHeight={"48px"}
+                displayMaxHeight={"none"}
+                displayMaxWidth={"none"}
+                displayMinHeight={"0"}
+                displayMinWidth={"0"}
+                displayWidth={"auto"}
                 src={{
                   src: mapboxQJ6T6Op9Vp,
                   fullWidth: 300,
@@ -1309,7 +1298,7 @@ function PlasmicHomepage__RenderFunc(props: {
           <Section
             data-plasmic-name={"testimonialsSection"}
             data-plasmic-override={overrides.testimonialsSection}
-            background={"gray" as const}
+            background={"gray"}
             className={classNames("__wab_instance", sty.testimonialsSection)}
           >
             <p.Stack
@@ -1456,7 +1445,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   headerHeroSection: "div";

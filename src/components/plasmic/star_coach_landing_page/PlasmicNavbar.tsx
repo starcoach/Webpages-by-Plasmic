@@ -64,13 +64,7 @@ export interface DefaultNavbarProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicNavbar__RenderFunc(props: {
   variants: PlasmicNavbar__VariantsArgs;
@@ -80,19 +74,18 @@ function PlasmicNavbar__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantscahMfBb9YIj2()
@@ -133,7 +126,7 @@ function PlasmicNavbar__RenderFunc(props: {
         >
           <Button
             className={classNames("__wab_instance", sty.button__cFum)}
-            color={"navLink" as const}
+            color={"navLink"}
             link={`/services`}
             submitsForm={true}
           >
@@ -149,7 +142,7 @@ function PlasmicNavbar__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__cbp2G)}
-            color={"navLink" as const}
+            color={"navLink"}
             submitsForm={true}
           >
             <div
@@ -164,7 +157,7 @@ function PlasmicNavbar__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__bmpyl)}
-            color={"navLink" as const}
+            color={"navLink"}
             submitsForm={true}
           >
             <div
@@ -179,7 +172,7 @@ function PlasmicNavbar__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__ke0Tt)}
-            color={"navLink" as const}
+            color={"navLink"}
             submitsForm={true}
           >
             <div
@@ -194,7 +187,7 @@ function PlasmicNavbar__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__zqrU)}
-            color={"navLink" as const}
+            color={"navLink"}
             submitsForm={true}
           >
             <div
@@ -209,7 +202,7 @@ function PlasmicNavbar__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button___1OGte)}
-            color={"darkGray" as const}
+            color={"darkGray"}
             submitsForm={true}
           >
             {"Sign up"}
@@ -246,7 +239,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   logo: typeof Logo;

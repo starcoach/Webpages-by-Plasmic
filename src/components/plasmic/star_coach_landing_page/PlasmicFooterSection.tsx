@@ -67,13 +67,7 @@ export interface DefaultFooterSectionProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicFooterSection__RenderFunc(props: {
   variants: PlasmicFooterSection__VariantsArgs;
@@ -83,19 +77,18 @@ function PlasmicFooterSection__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantscahMfBb9YIj2()
@@ -184,7 +177,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </div>
           <Button
             className={classNames("__wab_instance", sty.button__jlilS)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -200,7 +193,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__hbRW)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -216,7 +209,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__nPt1)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -232,7 +225,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__pvMPg)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -263,7 +256,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </div>
           <Button
             className={classNames("__wab_instance", sty.button__dNbht)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -271,7 +264,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__cmwIs)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -279,7 +272,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__b1AKf)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -302,7 +295,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </div>
           <Button
             className={classNames("__wab_instance", sty.button__lozMr)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -310,7 +303,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__aUl2E)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -318,7 +311,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__iNjow)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -326,7 +319,7 @@ function PlasmicFooterSection__RenderFunc(props: {
           </Button>
           <Button
             className={classNames("__wab_instance", sty.button__zOqOt)}
-            color={"navLink" as const}
+            color={"navLink"}
             flat={true}
             submitsForm={true}
           >
@@ -344,7 +337,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   logo: typeof Logo;

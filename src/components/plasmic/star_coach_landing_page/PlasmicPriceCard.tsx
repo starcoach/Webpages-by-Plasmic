@@ -90,13 +90,7 @@ export interface DefaultPriceCardProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicPriceCard__RenderFunc(props: {
   variants: PlasmicPriceCard__VariantsArgs;
@@ -106,21 +100,20 @@ function PlasmicPriceCard__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const [$queries, setDollarQueries] = React.useState({});
-
-  const stateSpecs = React.useMemo(
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "primary",
@@ -140,7 +133,7 @@ function PlasmicPriceCard__RenderFunc(props: {
   const $state = p.useDollarState(stateSpecs, {
     $props,
     $ctx,
-    $queries,
+    $queries: {},
     $refs
   });
 
@@ -266,11 +259,7 @@ function PlasmicPriceCard__RenderFunc(props: {
         <Button
           data-plasmic-name={"button"}
           data-plasmic-override={overrides.button}
-          color={
-            hasVariant($state, "primary", "primary")
-              ? ("green" as const)
-              : ("white" as const)
-          }
+          color={hasVariant($state, "primary", "primary") ? "green" : "white"}
           extraSmallShadow={true}
           submitsForm={true}
         >
@@ -301,7 +290,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   divider: typeof Divider;

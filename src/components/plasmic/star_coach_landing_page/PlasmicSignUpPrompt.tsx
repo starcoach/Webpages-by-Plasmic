@@ -69,13 +69,7 @@ export interface DefaultSignUpPromptProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicSignUpPrompt__RenderFunc(props: {
   variants: PlasmicSignUpPrompt__VariantsArgs;
@@ -85,39 +79,38 @@ function PlasmicSignUpPrompt__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const [$queries, setDollarQueries] = React.useState({});
-
-  const stateSpecs = React.useMemo(
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "textInput.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
         path: "textInput2.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       },
       {
         path: "textInput3.value",
         type: "private",
         variableType: "text",
-        initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
+        initFunc: ({ $props, $state, $queries, $ctx }) => ""
       }
     ],
     [$props, $ctx, $refs]
@@ -125,7 +118,7 @@ function PlasmicSignUpPrompt__RenderFunc(props: {
   const $state = p.useDollarState(stateSpecs, {
     $props,
     $ctx,
-    $queries,
+    $queries: {},
     $refs
   });
 
@@ -225,7 +218,7 @@ function PlasmicSignUpPrompt__RenderFunc(props: {
                   (e => e.target?.value).apply(null, eventArgs)
                 );
               }}
-              placeholder={"Full Name" as const}
+              placeholder={"Full Name"}
               value={
                 p.generateStateValueProp($state, ["textInput", "value"]) ?? ""
               }
@@ -240,7 +233,7 @@ function PlasmicSignUpPrompt__RenderFunc(props: {
                   (e => e.target?.value).apply(null, eventArgs)
                 );
               }}
-              placeholder={"Email" as const}
+              placeholder={"Email"}
               value={
                 p.generateStateValueProp($state, ["textInput2", "value"]) ?? ""
               }
@@ -255,7 +248,7 @@ function PlasmicSignUpPrompt__RenderFunc(props: {
                   (e => e.target?.value).apply(null, eventArgs)
                 );
               }}
-              placeholder={"Password" as const}
+              placeholder={"Password"}
               value={
                 p.generateStateValueProp($state, ["textInput3", "value"]) ?? ""
               }
@@ -263,7 +256,7 @@ function PlasmicSignUpPrompt__RenderFunc(props: {
           </p.Stack>
           <Button
             className={classNames("__wab_instance", sty.button__cOrY)}
-            color={"indigo" as const}
+            color={"indigo"}
             endIcon={
               <WandIcon
                 className={classNames(projectcss.all, sty.svg__tcZoi)}
@@ -301,7 +294,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   textInput: typeof TextInput;

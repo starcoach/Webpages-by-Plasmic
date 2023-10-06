@@ -77,13 +77,7 @@ export interface DefaultCallToActionSectionProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicCallToActionSection__RenderFunc(props: {
   variants: PlasmicCallToActionSection__VariantsArgs;
@@ -93,7 +87,6 @@ function PlasmicCallToActionSection__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(
     () =>
       Object.assign(
@@ -114,12 +107,12 @@ function PlasmicCallToActionSection__RenderFunc(props: {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   const globalVariants = ensureGlobalVariants({
     screen: useScreenVariantscahMfBb9YIj2()
@@ -153,22 +146,20 @@ function PlasmicCallToActionSection__RenderFunc(props: {
             data-plasmic-override={overrides.img}
             alt={""}
             className={classNames(sty.img)}
-            displayHeight={"auto" as const}
-            displayMaxHeight={"none" as const}
-            displayMaxWidth={"none" as const}
-            displayMinHeight={"0" as const}
-            displayMinWidth={"0" as const}
-            displayWidth={"auto" as const}
+            displayHeight={"auto"}
+            displayMaxHeight={"none"}
+            displayMaxWidth={"none"}
+            displayMinHeight={"0"}
+            displayMinWidth={"0"}
+            displayWidth={"auto"}
             src={args.image}
           />
 
-          {true ? (
-            <div
-              data-plasmic-name={"blend"}
-              data-plasmic-override={overrides.blend}
-              className={classNames(projectcss.all, sty.blend)}
-            />
-          ) : null}
+          <div
+            data-plasmic-name={"blend"}
+            data-plasmic-override={overrides.blend}
+            className={classNames(projectcss.all, sty.blend)}
+          />
         </div>
         <div className={classNames(projectcss.all, sty.freeBox__ssVbt)}>
           <p.Stack
@@ -234,7 +225,7 @@ function PlasmicCallToActionSection__RenderFunc(props: {
                           "__wab_instance",
                           sty.button___9Nsvg
                         )}
-                        color={"blue" as const}
+                        color={"blue"}
                         endIcon={
                           <ChevronRightIcon
                             className={classNames(
@@ -289,7 +280,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   art: "div";

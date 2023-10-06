@@ -70,13 +70,7 @@ export interface DefaultBannerProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicBanner__RenderFunc(props: {
   variants: PlasmicBanner__VariantsArgs;
@@ -86,7 +80,6 @@ function PlasmicBanner__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(
     () =>
       Object.assign(
@@ -107,12 +100,12 @@ function PlasmicBanner__RenderFunc(props: {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <div
@@ -139,22 +132,20 @@ function PlasmicBanner__RenderFunc(props: {
           data-plasmic-override={overrides.img}
           alt={""}
           className={classNames(sty.img)}
-          displayHeight={"100%" as const}
-          displayMaxHeight={"none" as const}
-          displayMaxWidth={"none" as const}
-          displayMinHeight={"0" as const}
-          displayMinWidth={"0" as const}
-          displayWidth={"100%" as const}
+          displayHeight={"100%"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"none"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"100%"}
           src={args.image}
         />
 
-        {true ? (
-          <div
-            data-plasmic-name={"gradient"}
-            data-plasmic-override={overrides.gradient}
-            className={classNames(projectcss.all, sty.gradient)}
-          />
-        ) : null}
+        <div
+          data-plasmic-name={"gradient"}
+          data-plasmic-override={overrides.gradient}
+          className={classNames(projectcss.all, sty.gradient)}
+        />
       </div>
       <p.Stack
         as={"div"}
@@ -213,7 +204,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   right: "div";

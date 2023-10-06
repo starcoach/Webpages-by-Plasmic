@@ -74,13 +74,7 @@ export interface DefaultTestimonialProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicTestimonial__RenderFunc(props: {
   variants: PlasmicTestimonial__VariantsArgs;
@@ -90,7 +84,6 @@ function PlasmicTestimonial__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(
     () =>
       Object.assign(
@@ -111,12 +104,12 @@ function PlasmicTestimonial__RenderFunc(props: {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
-
-  const [$queries, setDollarQueries] = React.useState({});
 
   return (
     <p.Stack
@@ -157,12 +150,12 @@ function PlasmicTestimonial__RenderFunc(props: {
           data-plasmic-override={overrides.authorPicture}
           alt={""}
           className={classNames(sty.authorPicture)}
-          displayHeight={"64px" as const}
-          displayMaxHeight={"none" as const}
-          displayMaxWidth={"none" as const}
-          displayMinHeight={"0" as const}
-          displayMinWidth={"0" as const}
-          displayWidth={"64px" as const}
+          displayHeight={"64px"}
+          displayMaxHeight={"none"}
+          displayMaxWidth={"none"}
+          displayMinHeight={"0"}
+          displayMinWidth={"0"}
+          displayWidth={"64px"}
           src={args.image}
         />
 
@@ -195,7 +188,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "div";
   authorPicture: typeof p.PlasmicImg;

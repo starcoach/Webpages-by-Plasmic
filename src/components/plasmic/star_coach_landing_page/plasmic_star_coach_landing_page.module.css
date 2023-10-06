@@ -171,19 +171,61 @@
 }
 
 .plasmic_mixins {
+  --mixin-NgRnyDdV9FJJ_white-space: pre-wrap;
+  --plasmic-mixin-container_white-space: var(--mixin-NgRnyDdV9FJJ_white-space);
+  --mixin-iDsc4qTNTOUQ_white-space: pre-wrap;
+  --plasmic-mixin-h-4_white-space: var(--mixin-iDsc4qTNTOUQ_white-space);
   --mixin-p2FSPTZtbdh0_box-shadow: 0px 0px 0px 3px #007aff80;
   --plasmic-mixin-focus-shadow_box-shadow: var(--mixin-p2FSPTZtbdh0_box-shadow);
+  --mixin-p2FSPTZtbdh0_white-space: pre-wrap;
+  --plasmic-mixin-focus-shadow_white-space: var(
+    --mixin-p2FSPTZtbdh0_white-space
+  );
+  --mixin-w2cQnBsY0jSh_white-space: pre-wrap;
+  --plasmic-mixin-10-16-padding_white-space: var(
+    --mixin-w2cQnBsY0jSh_white-space
+  );
+  --mixin-SBJLYG1X68Vt_white-space: pre-wrap;
+  --plasmic-mixin-6-radius_white-space: var(--mixin-SBJLYG1X68Vt_white-space);
   --mixin-4IvTTQTzZ5yI_box-shadow: 0px 0px 0px 4px #0095ff80;
   --plasmic-mixin-focus-outline_box-shadow: var(
     --mixin-4IvTTQTzZ5yI_box-shadow
+  );
+  --mixin-4IvTTQTzZ5yI_white-space: pre-wrap;
+  --plasmic-mixin-focus-outline_white-space: var(
+    --mixin-4IvTTQTzZ5yI_white-space
   );
   --mixin-T-8VNBZC4RSj_box-shadow: 0px 1px 1px 1px #0000001a;
   --plasmic-mixin-extra-small-shadow_box-shadow: var(
     --mixin-T-8VNBZC4RSj_box-shadow
   );
+  --mixin-T-8VNBZC4RSj_white-space: pre-wrap;
+  --plasmic-mixin-extra-small-shadow_white-space: var(
+    --mixin-T-8VNBZC4RSj_white-space
+  );
+  --mixin-dvxY51nKiEni_white-space: pre-wrap;
+  --plasmic-mixin-heading-6_white-space: var(--mixin-dvxY51nKiEni_white-space);
   --mixin-sbNeUL1BaRvS_box-shadow: 0px 10px 10px 0px #00000026;
   --plasmic-mixin-medium-shadow_box-shadow: var(
     --mixin-sbNeUL1BaRvS_box-shadow
+  );
+  --mixin-sbNeUL1BaRvS_white-space: pre-wrap;
+  --plasmic-mixin-medium-shadow_white-space: var(
+    --mixin-sbNeUL1BaRvS_white-space
+  );
+  --mixin-ORXwIzvC6SiQ_white-space: pre-wrap;
+  --plasmic-mixin-heading-2_white-space: var(--mixin-ORXwIzvC6SiQ_white-space);
+  --mixin-sn5q1PTo_O1B_white-space: pre-wrap;
+  --plasmic-mixin-bg-image_white-space: var(--mixin-sn5q1PTo_O1B_white-space);
+  --mixin-L49zzGtN3zu2_white-space: pre-wrap;
+  --plasmic-mixin-section_white-space: var(--mixin-L49zzGtN3zu2_white-space);
+  --mixin-9Q6vZx8-50xS_white-space: pre-wrap;
+  --plasmic-mixin-dark-section-background_white-space: var(
+    --mixin-9Q6vZx8-50xS_white-space
+  );
+  --mixin-TrPnsuXdaUZx_white-space: pre-wrap;
+  --plasmic-mixin-content-max_white-space: var(
+    --mixin-TrPnsuXdaUZx_white-space
   );
 }
 

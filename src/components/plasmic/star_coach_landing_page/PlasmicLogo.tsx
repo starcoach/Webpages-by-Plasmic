@@ -67,13 +67,7 @@ export interface DefaultLogoProps {
   className?: string;
 }
 
-const __wrapUserFunction =
-  globalThis.__PlasmicWrapUserFunction ?? ((loc, fn) => fn());
-const __wrapUserPromise =
-  globalThis.__PlasmicWrapUserPromise ??
-  (async (loc, promise) => {
-    return await promise;
-  });
+const $$ = {};
 
 function PlasmicLogo__RenderFunc(props: {
   variants: PlasmicLogo__VariantsArgs;
@@ -83,21 +77,20 @@ function PlasmicLogo__RenderFunc(props: {
 }) {
   const { variants, overrides, forNode } = props;
 
-  const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
 
   const $props = {
     ...args,
     ...variants
   };
+
+  const $ctx = ph.useDataEnv?.() || {};
   const refsRef = React.useRef({});
   const $refs = refsRef.current;
 
   const currentUser = p.useCurrentUser?.() || {};
 
-  const [$queries, setDollarQueries] = React.useState({});
-
-  const stateSpecs = React.useMemo(
+  const stateSpecs: Parameters<typeof p.useDollarState>[0] = React.useMemo(
     () => [
       {
         path: "_50Opaque",
@@ -111,7 +104,7 @@ function PlasmicLogo__RenderFunc(props: {
   const $state = p.useDollarState(stateSpecs, {
     $props,
     $ctx,
-    $queries,
+    $queries: {},
     $refs
   });
 
@@ -140,12 +133,12 @@ function PlasmicLogo__RenderFunc(props: {
         className={classNames(sty.img, {
           [sty.img_50Opaque]: hasVariant($state, "_50Opaque", "_50Opaque")
         })}
-        displayHeight={"40px" as const}
-        displayMaxHeight={"none" as const}
-        displayMaxWidth={"none" as const}
-        displayMinHeight={"0" as const}
-        displayMinWidth={"0" as const}
-        displayWidth={"40px" as const}
+        displayHeight={"40px"}
+        displayMaxHeight={"none"}
+        displayMaxWidth={"none"}
+        displayMinHeight={"0"}
+        displayMinWidth={"0"}
+        displayWidth={"40px"}
         src={{
           src: showroom152PngLUiHsRaeS,
           fullWidth: 152,
@@ -163,7 +156,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  typeof PlasmicDescendants[T][number];
+  (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
   root: "a";
   img: typeof p.PlasmicImg;
